@@ -113,9 +113,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LtY-RR-y61">
-                                <rect key="frame" x="167" y="427" width="81" height="42"/>
+                                <rect key="frame" x="142" y="427" width="138" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -127,6 +127,7 @@
                         <outlet property="greetingHand" destination="LtY-RR-y61" id="us6-H1-1pp"/>
                         <outlet property="greetingOfUser" destination="ELR-UT-ZfA" id="tVc-dM-nmR"/>
                         <outlet property="hand" destination="LtY-RR-y61" id="Hcz-5q-NNr"/>
+                        <outlet property="handEmoji" destination="LtY-RR-y61" id="fmG-K9-JRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOI-ja-hcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

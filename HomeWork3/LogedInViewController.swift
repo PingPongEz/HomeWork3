@@ -11,6 +11,7 @@ class LogedInViewController: UIViewController {
     
     var username: String!
     
+    @IBOutlet private var handEmoji: UILabel!
     @IBOutlet private var hand: UILabel!
     @IBOutlet private var greetingOfUser: UILabel!
     @IBOutlet private var greetingHand: UILabel!
@@ -19,6 +20,8 @@ class LogedInViewController: UIViewController {
         super.viewDidLoad()
         
         greetingOfUser.text! += username
+        
+        handEmoji.text = "\u{1F44B}"
     }
     
     @IBAction func logOutButtonPressed() {
