@@ -18,12 +18,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIView.endEditing))
     }
     
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let username = segue.destination as? LogedInViewController else { return }
         username.username = userNameTF.text
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     @IBAction func logInButtonPressed() {
