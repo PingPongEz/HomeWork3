@@ -109,7 +109,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log out" titleAlignment="center"/>
                                 <connections>
-                                    <segue destination="RJl-0G-ImU" kind="unwind" unwindAction="logOutButtonFor:" id="3kr-k1-8fh"/>
+                                    <segue destination="RJl-0G-ImU" kind="unwind" unwindAction="logOutButton:" id="Rs1-fN-A1S"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LtY-RR-y61">

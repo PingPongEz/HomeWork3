@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         alertForUN()
     }
     
-    @IBAction func logOutButton(for segue: UIStoryboardSegue) {
+    @IBAction func logOutButton(_ unwindSegue: UIStoryboardSegue) {
         userNameTF.text = nil
         userPasswordTF.text = nil
     }
