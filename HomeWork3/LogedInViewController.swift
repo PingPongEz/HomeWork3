@@ -19,13 +19,9 @@ class LogedInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        greetingOfUser.text! += username
+        greetingOfUser.text = greetingOfUser.text ?? "Hello, " +  username
         
         handEmoji.text = "\u{1F44B}"
-    }
-    
-    @IBAction func logOutButtonPressed() {
-        dismiss(animated: true)
     }
     
 }

@@ -7,25 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    let trueUserName = "Einstein"
-    let trueUserPass = "2281488"
+class LoginScreenView: UIViewController {
     
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var userPasswordTF: UITextField!
+    @IBOutlet var usernameButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIView.endEditing))
-    }
+    private let trueUserName = "Einstein"
+    private let trueUserPass = "2281488"
     
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let username = segue.destination as? LogedInViewController else { return }
         username.username = userNameTF.text
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -53,7 +49,7 @@ class ViewController: UIViewController {
 
 
 // MARK: Private Funcs Alerts
-extension ViewController {
+extension LoginScreenView {
     private func alertForLogin() {      //Alert For Login
         let alertForLogin = UIAlertController(title: "Wrong name or pass",
                                               message: "Try again",
