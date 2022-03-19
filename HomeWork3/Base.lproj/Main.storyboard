@@ -40,7 +40,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Log In"/>
                                         <connections>
                                             <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8G-vM-CEc"/>
-                                            <segue destination="j68-z0-NhX" kind="presentation" modalPresentationStyle="fullScreen" id="Ryk-tJ-nVG"/>
+                                            <segue destination="j68-z0-NhX" kind="presentation" identifier="LoggedInViewController" modalPresentationStyle="fullScreen" id="Ryk-tJ-nVG"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-p3-iNF">

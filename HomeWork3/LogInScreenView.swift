@@ -23,6 +23,11 @@ class LogInScreenView: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        userNameTF.delegate = self
+        userPasswordTF.delegate = self
+    }
+    
     @IBAction func logInButtonPressed() {
         if userNameTF.text != trueUserName
             || userPasswordTF.text != trueUserPass {
@@ -105,3 +110,4 @@ extension LogInScreenView: UITextFieldDelegate {
         return true
     }
 }
+
