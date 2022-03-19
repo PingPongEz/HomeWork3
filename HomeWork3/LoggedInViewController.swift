@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogedInViewController: UIViewController {
+class LoggedInViewController: UIViewController {
     
     var username: String!
     

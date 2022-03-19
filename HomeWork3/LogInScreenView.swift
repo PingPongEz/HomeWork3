@@ -7,30 +7,25 @@
 
 import UIKit
 
-class LoginScreenView: UIViewController {
+class LogInScreenView: UIViewController {
     
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var userPasswordTF: UITextField!
-    @IBOutlet var usernameButton: UIButton!
     
     private let trueUserName = "Einstein"
     private let trueUserPass = "2281488"
     
-        
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let username = segue.destination as? LogedInViewController else { return }
+        guard let username = segue.destination as? LoggedInViewController else { return }
         username.username = userNameTF.text
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
     @IBAction func logInButtonPressed() {
-        if userNameTF.text != trueUserName || userPasswordTF.text != trueUserPass {
+        if userNameTF.text != trueUserName
+            || userPasswordTF.text != trueUserPass {
             alertForLogin()
         }
     }
@@ -49,7 +44,7 @@ class LoginScreenView: UIViewController {
 
 
 // MARK: Private Funcs Alerts
-extension LoginScreenView {
+extension LogInScreenView {
     private func alertForLogin() {      //Alert For Login
         let alertForLogin = UIAlertController(title: "Wrong name or pass",
                                               message: "Try again",
@@ -58,14 +53,16 @@ extension LoginScreenView {
         present(alertForLogin, animated: true)
         
         let tryAgainButton = UIAlertAction(title: "Try again",
-                                           style: .default)
+                                           style: .default) { _ in
+            self.userPasswordTF.text = nil
+        }
         
         alertForLogin.addAction(tryAgainButton)
     }
     
     private func alertForUN() {         //Alert for Username
         let alertForUsername = UIAlertController(title: "Forgot?",
-                                                 message: "Einstein",
+                                                 message: "\(trueUserName)",
                                                  preferredStyle: .alert)
         
         present(alertForUsername, animated: true)
@@ -78,7 +75,7 @@ extension LoginScreenView {
     
     private func alertForPass() {       //Alert for password
         let alertForPass = UIAlertController(title: "Forgot?",
-                                             message: "2281488",
+                                             message: "\(trueUserPass)",
                                              preferredStyle: .alert)
         
         present(alertForPass, animated: true)
@@ -86,5 +83,25 @@ extension LoginScreenView {
         let okButtonForPass = UIAlertAction(title: "OK",
                                             style: .default)
         alertForPass.addAction(okButtonForPass)
+    }
+}
+
+extension LogInScreenView: UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            userPasswordTF.becomeFirstResponder()
+        } else {
+            logInButtonPressed()
+            performSegue(withIdentifier: "LoggedInViewController",
+                         sender: nil)
+        }
+        return true
     }
 }
