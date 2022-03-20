@@ -19,7 +19,7 @@ class LoggedInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        greetingOfUser.text = greetingOfUser.text ?? "Hello, " +  username
+        greetingOfUser.text = (greetingOfUser.text ?? "Hello, ") + username
         
         handEmoji.text = "\u{1F44B}"
     }

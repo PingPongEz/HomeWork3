@@ -18,9 +18,20 @@ class LogInScreenView: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let username = segue.destination as? LoggedInViewController else { return }
-        username.username = userNameTF.text
+        guard let tabBar = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBar.viewControllers else { return }
         
+        let user = UserDescription()
+        
+        for viewController in viewControllers {
+            if let homePage = viewController as? LoggedInViewController {
+                homePage.username = user.userName
+            } else if let navigationController = viewController as? UINavigationController {
+                if let aboutUser = navigationController.topViewController as? AboutMeViewController {
+                    aboutUser.infoAboutMe = user.aboutUser
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -104,8 +115,7 @@ extension LogInScreenView: UITextFieldDelegate {
             userPasswordTF.becomeFirstResponder()
         } else {
             logInButtonPressed()
-            performSegue(withIdentifier: "LoggedInViewController",
-                         sender: nil)
+            performSegue(withIdentifier: "logInDone", sender: nil)
         }
         return true
     }
