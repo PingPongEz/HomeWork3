@@ -9,12 +9,10 @@ import UIKit
 
 class LogInScreenView: UIViewController {
     
+    private let usernameData = UserNameData()
+
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var userPasswordTF: UITextField!
-    
-    private let trueUserName = "Einstein"
-    private let trueUserPass = "2281488"
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -39,9 +37,8 @@ class LogInScreenView: UIViewController {
         userPasswordTF.delegate = self
     }
     
-    @IBAction func logInButtonPressed() {
-        if userNameTF.text != trueUserName
-            || userPasswordTF.text != trueUserPass {
+    @IBAction func logInButtonPressed() {        if userNameTF.text != usernameData.trueUserName
+            || userPasswordTF.text != usernameData.trueUserPass {
             alertForLogin()
         }
     }
@@ -77,9 +74,11 @@ extension LogInScreenView {
     }
     
     private func alertForUN() {         //Alert for Username
-        let alertForUsername = UIAlertController(title: "Forgot?",
-                                                 message: "\(trueUserName)",
-                                                 preferredStyle: .alert)
+        let alertForUsername = UIAlertController(
+            title: "Forgot?",
+            message: "\(usernameData.trueUserName)",
+            preferredStyle: .alert
+        )
         
         present(alertForUsername, animated: true)
         
@@ -90,9 +89,11 @@ extension LogInScreenView {
     }
     
     private func alertForPass() {       //Alert for password
-        let alertForPass = UIAlertController(title: "Forgot?",
-                                             message: "\(trueUserPass)",
-                                             preferredStyle: .alert)
+        let alertForPass = UIAlertController(
+            title: "Forgot?",
+            message: "\(usernameData.trueUserPass)",
+            preferredStyle: .alert
+        )
         
         present(alertForPass, animated: true)
         
@@ -102,6 +103,8 @@ extension LogInScreenView {
     }
 }
 
+
+//MARK: Work with keyboard and touches
 extension LogInScreenView: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>,

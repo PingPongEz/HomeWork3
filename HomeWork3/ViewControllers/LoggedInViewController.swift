@@ -9,6 +9,7 @@ import UIKit
 
 class LoggedInViewController: UIViewController {
     
+    
     var username: String!
     
     @IBOutlet private var handEmoji: UILabel!
