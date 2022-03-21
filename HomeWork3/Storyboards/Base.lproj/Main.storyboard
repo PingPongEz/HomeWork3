@@ -8,6 +8,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="mH6-07-QGP">
+            <objects>
+                <viewController id="HaL-14-RjK" customClass="RegisterViewController" customModule="HomeWork3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JUw-k5-wag">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AuR-t3-vJ7">
+                                <rect key="frame" x="107" y="291.66666666666669" width="200" height="159"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-Kl-wlX">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-c7-HWN">
+                                        <rect key="frame" x="0.0" y="64" width="200" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcE-58-dCz">
+                                        <rect key="frame" x="0.0" y="128" width="200" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="registerDonePressed" destination="HaL-14-RjK" eventType="touchUpInside" id="zRm-HE-sUu"/>
+                                            <segue destination="rgB-1p-GJR" kind="unwind" unwindAction="registerDone:" id="ROB-Xp-slM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Zps-t1-tGL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bjG-hU-0xO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AuR-t3-vJ7" firstAttribute="centerX" secondItem="JUw-k5-wag" secondAttribute="centerX" id="CIT-hU-upe"/>
+                            <constraint firstItem="AuR-t3-vJ7" firstAttribute="centerY" secondItem="JUw-k5-wag" secondAttribute="centerY" constant="-50" id="cpA-Ge-4qm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="registerPasswordTF" destination="w6r-c7-HWN" id="6TP-Qj-Gvv"/>
+                        <outlet property="registerUsernameTF" destination="ZkC-Kl-wlX" id="4JV-Ms-mQv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSo-pV-HDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rgB-1p-GJR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="856"/>
+        </scene>
         <!--Log In Screen View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="jRd-cv-VYN">
-                                <rect key="frame" x="56.666666666666657" y="301" width="301" height="230"/>
+                                <rect key="frame" x="56.666666666666657" y="269" width="301" height="294"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="6Fr-E3-ttU">
                                         <rect key="frame" x="0.0" y="0.0" width="301" height="102"/>
@@ -64,6 +117,15 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n56-B1-RjN">
+                                        <rect key="frame" x="0.0" y="263" width="301" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                                        <connections>
+                                            <action selector="registerButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="49g-Zu-HtO"/>
+                                            <segue destination="HaL-14-RjK" kind="presentation" identifier="RegisteView" id="lF1-eK-sDF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -231,6 +293,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Gha-YC-yQP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" restorationIdentifier="viewControllers" insetsLayoutMarginsFromSafeArea="NO" id="a4d-D0-KZp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

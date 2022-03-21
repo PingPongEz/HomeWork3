@@ -7,6 +7,8 @@
 
 import UIKit
 
+var users = [(String, String)]()
+
 class LogInScreenView: UIViewController {
     
     private let usernameData = UserNameData()
@@ -14,33 +16,25 @@ class LogInScreenView: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var userPasswordTF: UITextField!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let tabBar = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBar.viewControllers else { return }
-        
-        let user = UserDescription()
-        
-        for viewController in viewControllers {
-            if let homePage = viewController as? LoggedInViewController {
-                homePage.username = user.userName
-            } else if let navigationController = viewController as? UINavigationController {
-                if let aboutUser = navigationController.topViewController as? AboutMeViewController {
-                    aboutUser.infoAboutMe = user.aboutUser
-                }
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         userNameTF.delegate = self
         userPasswordTF.delegate = self
     }
+    @IBAction func registerButtonPressed() {
+    }
     
-    @IBAction func logInButtonPressed() {        if userNameTF.text != usernameData.trueUserName
-            || userPasswordTF.text != usernameData.trueUserPass {
-            alertForLogin()
+    @IBAction func logInButtonPressed() {
+        
+        guard let username = userNameTF.text else { alertForLogin(); return }
+        guard let password = userPasswordTF.text else { alertForLogin(); return }
+        
+        for (user, pass) in usersInApp.arrayOfUsers {
+            if user == username && pass == password {
+                performSegue(withIdentifier: "logInDone", sender: nil)
+            }
         }
+        alertForLogin()
+
     }
     @IBAction func forgotPasswordPressed() {
         alertForPass()
@@ -53,6 +47,7 @@ class LogInScreenView: UIViewController {
         userNameTF.text = nil
         userPasswordTF.text = nil
     }
+    
 }
 
 
@@ -76,7 +71,7 @@ extension LogInScreenView {
     private func alertForUN() {         //Alert for Username
         let alertForUsername = UIAlertController(
             title: "Forgot?",
-            message: "\(usernameData.trueUserName)",
+            message: "Einstein",
             preferredStyle: .alert
         )
         
@@ -91,7 +86,7 @@ extension LogInScreenView {
     private func alertForPass() {       //Alert for password
         let alertForPass = UIAlertController(
             title: "Forgot?",
-            message: "\(usernameData.trueUserPass)",
+            message: "2281488",
             preferredStyle: .alert
         )
         
@@ -124,3 +119,26 @@ extension LogInScreenView: UITextFieldDelegate {
     }
 }
 
+
+//MARK: Segues
+extension LoggedInViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let tabBar = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBar.viewControllers else { return }
+        
+        let user = UserDescription()
+        
+        for viewController in viewControllers {
+            if let homePage = viewController as? LoggedInViewController {
+                homePage.username = user.userName
+            } else if let navigationController = viewController as? UINavigationController {
+                if let aboutUser = navigationController.topViewController as? AboutMeViewController {
+                    aboutUser.infoAboutMe = user.aboutUser
+                }
+            }
+        }
+    }
+    
+}

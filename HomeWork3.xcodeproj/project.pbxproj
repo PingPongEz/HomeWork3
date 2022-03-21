@@ -14,7 +14,8 @@
 		147055FB27E2F9D800702438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147055FA27E2F9D800702438 /* Assets.xcassets */; };
 		147055FE27E2F9D800702438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147055FC27E2F9D800702438 /* LaunchScreen.storyboard */; };
 		1470560627E3433700702438 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470560527E3433700702438 /* LoggedInViewController.swift */; };
-		149BDCC727E84D97002C0F44 /* usernameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BDCC627E84D97002C0F44 /* usernameData.swift */; };
+		149BDCC727E84D97002C0F44 /* UserNameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BDCC627E84D97002C0F44 /* UserNameData.swift */; };
+		149BDCC927E89030002C0F44 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BDCC827E89030002C0F44 /* RegisterViewController.swift */; };
 		14D6CBFC27E735C6005EB6C8 /* ModelAbotUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6CBFB27E735C6005EB6C8 /* ModelAbotUser.swift */; };
 		14D6CC0027E78E6D005EB6C8 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6CBFF27E78E6D005EB6C8 /* AboutMeViewController.swift */; };
 		14D6CC0227E7A15F005EB6C8 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D6CC0127E7A15F005EB6C8 /* PhotosViewController.swift */; };
@@ -30,7 +31,8 @@
 		147055FD27E2F9D800702438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		147055FF27E2F9D800702438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1470560527E3433700702438 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
-		149BDCC627E84D97002C0F44 /* usernameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usernameData.swift; sourceTree = "<group>"; };
+		149BDCC627E84D97002C0F44 /* UserNameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameData.swift; sourceTree = "<group>"; };
+		149BDCC827E89030002C0F44 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		14D6CBFB27E735C6005EB6C8 /* ModelAbotUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAbotUser.swift; sourceTree = "<group>"; };
 		14D6CBFF27E78E6D005EB6C8 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		14D6CC0127E7A15F005EB6C8 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +93,8 @@
 				147055F527E2F9D600702438 /* LogInScreenView.swift */,
 				1470560527E3433700702438 /* LoggedInViewController.swift */,
 				14D6CC0127E7A15F005EB6C8 /* PhotosViewController.swift */,
-				149BDCC627E84D97002C0F44 /* usernameData.swift */,
+				149BDCC627E84D97002C0F44 /* UserNameData.swift */,
+				149BDCC827E89030002C0F44 /* RegisterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,8 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149BDCC927E89030002C0F44 /* RegisterViewController.swift in Sources */,
 				147055F627E2F9D600702438 /* LogInScreenView.swift in Sources */,
-				149BDCC727E84D97002C0F44 /* usernameData.swift in Sources */,
+				149BDCC727E84D97002C0F44 /* UserNameData.swift in Sources */,
 				14D6CBFC27E735C6005EB6C8 /* ModelAbotUser.swift in Sources */,
 				147055F227E2F9D600702438 /* AppDelegate.swift in Sources */,
 				147055F427E2F9D600702438 /* SceneDelegate.swift in Sources */,
