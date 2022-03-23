@@ -19,6 +19,5 @@ class PhotosViewController: UIViewController {
         //Да и в целом как работать с фото
     
     }
-    
 
 }

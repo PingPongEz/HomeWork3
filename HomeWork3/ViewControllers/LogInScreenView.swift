@@ -19,8 +19,6 @@ class LogInScreenView: UIViewController {
         userNameTF.delegate = self
         userPasswordTF.delegate = self
     }
-    @IBAction func registerButtonPressed() {
-    }
     
     @IBAction func logInButtonPressed() {
         
