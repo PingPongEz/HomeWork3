@@ -13,26 +13,26 @@
             <objects>
                 <viewController id="HaL-14-RjK" customClass="RegisterViewController" customModule="HomeWork3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JUw-k5-wag">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AuR-t3-vJ7">
-                                <rect key="frame" x="107" y="291.66666666666669" width="200" height="159"/>
+                                <rect key="frame" x="107" y="318.66666666666669" width="200" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-Kl-wlX">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-c7-HWN">
                                         <rect key="frame" x="0.0" y="64" width="200" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcE-58-dCz">
                                         <rect key="frame" x="0.0" y="128" width="200" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Register Done"/>
                                         <connections>
                                             <action selector="registerDonePressed" destination="HaL-14-RjK" eventType="touchUpInside" id="zRm-HE-sUu"/>
                                             <segue destination="rgB-1p-GJR" kind="unwind" unwindAction="registerDone:" id="ROB-Xp-slM"/>
@@ -123,7 +123,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Register"/>
                                         <connections>
                                             <action selector="registerButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="49g-Zu-HtO"/>
-                                            <segue destination="HaL-14-RjK" kind="presentation" identifier="RegisteView" id="lF1-eK-sDF"/>
+                                            <segue destination="HaL-14-RjK" kind="presentation" identifier="registerView" modalPresentationStyle="fullScreen" id="lF1-eK-sDF"/>
                                         </connections>
                                     </button>
                                 </subviews>

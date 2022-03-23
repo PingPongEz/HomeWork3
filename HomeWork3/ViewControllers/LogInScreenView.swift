@@ -7,11 +7,10 @@
 
 import UIKit
 
-var users = [(String, String)]()
+
 
 class LogInScreenView: UIViewController {
     
-    private let usernameData = UserNameData()
 
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var userPasswordTF: UITextField!
@@ -71,7 +70,7 @@ extension LogInScreenView {
     private func alertForUN() {         //Alert for Username
         let alertForUsername = UIAlertController(
             title: "Forgot?",
-            message: "Einstein",
+            message: "U are Registered by yourself!",
             preferredStyle: .alert
         )
         
@@ -86,7 +85,7 @@ extension LogInScreenView {
     private func alertForPass() {       //Alert for password
         let alertForPass = UIAlertController(
             title: "Forgot?",
-            message: "2281488",
+            message: "U are Registered by yourself!",
             preferredStyle: .alert
         )
         
@@ -121,14 +120,14 @@ extension LogInScreenView: UITextFieldDelegate {
 
 
 //MARK: Segues
-extension LoggedInViewController {
+extension LogInScreenView {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let tabBar = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBar.viewControllers else { return }
         
-        let user = UserDescription()
+        let user = usersInApp.person
         
         for viewController in viewControllers {
             if let homePage = viewController as? LoggedInViewController {
@@ -140,5 +139,6 @@ extension LoggedInViewController {
             }
         }
     }
-    
 }
+
+var usersInApp = UserNameData()
