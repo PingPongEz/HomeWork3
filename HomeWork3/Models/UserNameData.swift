@@ -27,7 +27,17 @@ struct UserNameData {
         }
         return false
     }
+    
+    let person = SomePerson() 
 }
 
-var usersInApp = UserNameData()
+struct SomePerson {
+    let userName = "Sergey"
+    let surname = "Veretennikov"
+    let aboutUser = """
+Сергей. 25 лет. Бездарность которая хочет стать великим человеком который сделает
+самое лучшее приложение на планете. Но пока что у него плохо получается все это
+потому что все на что он способен это тупить
+"""
+}
 
